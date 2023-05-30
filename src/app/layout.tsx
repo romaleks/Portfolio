@@ -1,7 +1,7 @@
-import './globals.scss'
-import { Nunito } from 'next/font/google'
+import '../styles/globals.scss'
+import { Raleway } from 'next/font/google'
 
-const nunito = Nunito({ subsets: ['latin'] })
+const raleway = Raleway({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Alex Protfolio',
@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={nunito.className}>{children}</body>
+      <body className={raleway.className}>{children}</body>
     </html>
   )
 }

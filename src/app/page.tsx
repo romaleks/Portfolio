@@ -1,3 +1,7 @@
 export default function Home() {
-  return <main className="text-9xl">Hello, my name is Alex</main>
+  return (
+    <main className="text-7xl font-bold tracking-wide">
+      Hello from <span>Alex</span>, <br /> Web Developer
+    </main>
+  )
 }

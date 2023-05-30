@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './variables';
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -18,5 +20,9 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #161616;
+  background: #000000;
+}
+
+span {
+  @include text-gradient(#fdfcfb, #e2d1c3, 60deg);
 }

@@ -1,4 +1,6 @@
-/** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors')
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -6,6 +8,11 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    colors: {
+      transparent: 'transparent',
+      while: colors.white,
+      black: colors.black,
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -14,5 +21,13 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  // plugins: [
+  //   plugin(({addComponents, theme, addUtilities}) => {
+  //     addUtilities({
+  //       'text-gradient': {
+
+  //       }
+  //     })
+  //   })
+  // ],
 }

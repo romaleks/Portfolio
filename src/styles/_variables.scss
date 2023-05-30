@@ -1,0 +1,5 @@
+@mixin text-gradient($start-color: #fff, $end-color: #000, $direction: 90deg) {
+  @apply text-transparent;
+  background: linear-gradient($direction, $start-color, $end-color);
+  -webkit-background-clip: text;
+}
