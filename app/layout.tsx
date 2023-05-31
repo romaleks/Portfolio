@@ -1,7 +1,10 @@
-import '../styles/globals.scss'
+import './styles/globals.scss'
 import { Raleway } from 'next/font/google'
 
-const raleway = Raleway({ subsets: ['latin'] })
+const raleway = Raleway({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+})
 
 export const metadata = {
   title: 'Alex Protfolio',

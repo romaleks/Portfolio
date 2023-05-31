@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './variables';
+
+body {
+  color: #fff;
+  background: #000000;
+}
