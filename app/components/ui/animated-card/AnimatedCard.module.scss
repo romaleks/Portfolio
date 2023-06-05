@@ -1,0 +1,31 @@
+.container {
+  @apply relative w-screen h-screen overflow-hidden;
+  perspective: 1000px;
+
+  .rotationWrapper {
+    @apply w-full h-full flex justify-center items-center;
+    transform-style: preserve-3d;
+  }
+
+  .cardWrapper {
+    border-radius: 20px;
+    backdrop-filter: blur(3px) brightness(120%);
+  }
+}
+
+.grid {
+  @apply absolute w-full h-full;
+  background-size: 60px 60px;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    white 2px,
+    transparent 0
+  );
+  background-position: center;
+  transform: translateZ(-500px);
+}
+
+.card {
+  @apply w-80 h-96 rounded-3xl py-4 px-8 flex justify-center items-center text-center text-gray;
+  border: 1px solid rgba(200 200 200 / 0.2);
+}

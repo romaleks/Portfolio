@@ -1,3 +1,4 @@
+import AnimatedCard from './components/ui/animated-card/AnimatedCard'
 import styles from './styles.module.scss'
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
           I'm a proffesional developer from Moscow
         </div>
       </div>
+      <AnimatedCard />
     </main>
   )
 }

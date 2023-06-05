@@ -1,7 +1,7 @@
 @import './styles/variables';
 
 .content {
-  @apply h-screen w-5/6 mx-auto flex items-center;
+  @apply h-screen w-5/6 mx-auto flex justify-between items-center;
 
   .about {
     @apply text-7xl font-medium;
