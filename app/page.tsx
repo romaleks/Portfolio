@@ -1,4 +1,5 @@
 import AnimatedCard from './components/ui/animated-card/AnimatedCard'
+import Cursor from './components/ui/cursor/Cursor'
 import styles from './styles.module.scss'
 
 export default function Home() {
@@ -20,6 +21,8 @@ export default function Home() {
         image="/profile-photo.jpg"
         isLarge={true}
       />
+
+      <Cursor />
     </main>
   )
 }

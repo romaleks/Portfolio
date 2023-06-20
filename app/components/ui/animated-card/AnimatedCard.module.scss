@@ -1,5 +1,6 @@
 .container {
   perspective: 1000px;
+  z-index: 50;
 
   .rotationWrapper {
     @apply w-full h-full flex justify-center items-center;
@@ -16,7 +17,7 @@
   @apply rounded-3xl p-4 flex flex-col justify-between gap-4 text-center text-gray;
   width: 250px;
   height: 320px;
-  border: 1px solid rgba(200 200 200 / 0.2);
+  border: 2px solid rgba(200 200 200 / 0.2);
 
   .image {
     @apply rounded-lg overflow-hidden w-full h-full relative;
