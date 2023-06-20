@@ -13,11 +13,13 @@
 }
 
 .card {
-  @apply w-80 h-96 rounded-3xl p-4 flex flex-col justify-between text-center text-gray;
+  @apply rounded-3xl p-4 flex flex-col justify-between gap-4 text-center text-gray;
+  width: 250px;
+  height: 320px;
   border: 1px solid rgba(200 200 200 / 0.2);
 
   .image {
-    @apply rounded-lg overflow-hidden w-full h-full max-h-80 relative;
+    @apply rounded-lg overflow-hidden w-full h-full relative;
   }
 
   .title {
@@ -27,4 +29,10 @@
 
 .shadow {
   @apply absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1 -z-10;
+}
+
+.large {
+  @apply gap-8;
+  width: 450px;
+  height: 600px;
 }

@@ -9,9 +9,10 @@ import Image from 'next/image'
 export interface IAnimatedCard {
   title: string
   image: string
+  isLarge?: boolean
 }
 
-const AnimatedCard: FC<IAnimatedCard> = ({ title, image }) => {
+const AnimatedCard: FC<IAnimatedCard> = ({ title, image, isLarge }) => {
   const ref = useRef<HTMLDivElement>(null)
 
   const { rotateX, rotateY } = useAnimatedCard(ref)
@@ -23,7 +24,7 @@ const AnimatedCard: FC<IAnimatedCard> = ({ title, image }) => {
         style={{ rotateX, rotateY }}
       >
         <div className={styles.cardWrapper} ref={ref}>
-          <Card title={title} image={image} />
+          <Card title={title} image={image} isLarge={isLarge} />
         </div>
         <div className={styles.shadow}>
           <Image src={image} alt="shadow" width={500} height={100} />

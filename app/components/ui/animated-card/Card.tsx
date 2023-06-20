@@ -2,10 +2,11 @@ import { FC } from 'react'
 import styles from './AnimatedCard.module.scss'
 import Image from 'next/image'
 import { IAnimatedCard } from './AnimatedCard'
+import cn from 'clsx'
 
-const Card: FC<IAnimatedCard> = ({ image, title }) => {
+const Card: FC<IAnimatedCard> = ({ image, title, isLarge }) => {
   return (
-    <div className={styles.card}>
+    <div className={cn(styles.card, { [styles.large]: isLarge })}>
       <div className={styles.image}>
         <Image
           src={image}

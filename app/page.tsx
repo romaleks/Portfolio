@@ -15,7 +15,11 @@ export default function Home() {
           I'm a proffesional developer from Moscow
         </div>
       </div>
-      <AnimatedCard title="Alexandr Romanov" image="/profile-photo.jpg" />
+      <AnimatedCard
+        title="Alexandr Romanov"
+        image="/profile-photo.jpg"
+        isLarge={true}
+      />
     </main>
   )
 }
