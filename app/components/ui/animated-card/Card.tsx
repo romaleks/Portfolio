@@ -1,13 +1,21 @@
-'use client'
-
 import { FC } from 'react'
 import styles from './AnimatedCard.module.scss'
-import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { IAnimatedCard } from './AnimatedCard'
 
-const Card: FC = () => {
+const Card: FC<IAnimatedCard> = ({ image, title }) => {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.card}>3D card effect</div>
+    <div className={styles.card}>
+      <div className={styles.image}>
+        <Image
+          src={image}
+          alt={title}
+          fill
+          style={{ objectFit: 'cover' }}
+          priority
+        />
+      </div>
+      <div className={styles.title}>{title}</div>
     </div>
   )
 }

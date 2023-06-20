@@ -1,10 +1,10 @@
 @import './styles/variables';
 
 .content {
-  @apply h-screen w-5/6 mx-auto flex justify-between items-center;
+  @apply h-screen w-5/6 mx-auto flex gap-8 items-center;
 
   .about {
-    @apply text-7xl font-medium;
+    @apply text-7xl font-medium flex-1;
 
     .title {
       @apply tracking-wide mb-8;

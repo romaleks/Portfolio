@@ -1,5 +1,4 @@
 .container {
-  @apply relative w-screen h-screen overflow-hidden;
   perspective: 1000px;
 
   .rotationWrapper {
@@ -9,23 +8,23 @@
 
   .cardWrapper {
     border-radius: 20px;
-    backdrop-filter: blur(3px) brightness(120%);
+    @apply backdrop-blur-3xl bg-opacity-5 bg-white;
   }
 }
 
-.grid {
-  @apply absolute w-full h-full;
-  background-size: 60px 60px;
-  background-image: radial-gradient(
-    circle at 1px 1px,
-    white 2px,
-    transparent 0
-  );
-  background-position: center;
-  transform: translateZ(-500px);
+.card {
+  @apply w-80 h-96 rounded-3xl p-4 flex flex-col justify-between text-center text-gray;
+  border: 1px solid rgba(200 200 200 / 0.2);
+
+  .image {
+    @apply rounded-lg overflow-hidden w-full h-full max-h-80 relative;
+  }
+
+  .title {
+    @apply text-xl text-white font-medium;
+  }
 }
 
-.card {
-  @apply w-80 h-96 rounded-3xl py-4 px-8 flex justify-center items-center text-center text-gray;
-  border: 1px solid rgba(200 200 200 / 0.2);
+.shadow {
+  @apply absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1 -z-10;
 }
