@@ -1,3 +1,5 @@
+import Cursor from './components/ui/cursor/Cursor'
+import Navigation from './components/ui/navigation/Navigation'
 import './styles/globals.scss'
 import { Raleway } from 'next/font/google'
 
@@ -18,7 +20,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={raleway.className}>{children}</body>
+      <body className={raleway.className}>
+        <Navigation />
+        {children}
+        <Cursor />
+      </body>
     </html>
   )
 }

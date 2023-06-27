@@ -4,25 +4,25 @@ import styles from './styles.module.scss'
 
 export default function Home() {
   return (
-    <main className={styles.content}>
-      <div className={styles.about}>
-        <div className={styles.title}>
-          <div>
-            Hello from <span>Alex</span>,
+    <main>
+      <div className={styles.content}>
+        <div className={styles.about}>
+          <div className={styles.title}>
+            <div>
+              Hello from <span>Alex</span>,
+            </div>
+            <div>Web Developer</div>
           </div>
-          <div>Web Developer</div>
+          <div className={styles.subtitle}>
+            I'm a proffesional developer from Moscow
+          </div>
         </div>
-        <div className={styles.subtitle}>
-          I'm a proffesional developer from Moscow
-        </div>
+        <AnimatedCard
+          title="Alexandr Romanov"
+          image="/profile-photo.jpg"
+          isLarge={true}
+        />
       </div>
-      <AnimatedCard
-        title="Alexandr Romanov"
-        image="/profile-photo.jpg"
-        isLarge={true}
-      />
-
-      <Cursor />
     </main>
   )
 }

@@ -1,0 +1,15 @@
+.navigation {
+  @apply p-4 border-b-2;
+
+  .items {
+    @apply w-5/6 mx-auto flex items-center gap-8;
+
+    .logo {
+      @apply w-10 h-10 rounded-full bg-white mr-auto;
+    }
+
+    .link {
+      @apply text-xl uppercase;
+    }
+  }
+}

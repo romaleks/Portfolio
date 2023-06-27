@@ -1,16 +1,18 @@
 'use client'
-import { FC, useState, useRef } from 'react'
+import { FC, useState } from 'react'
 import styles from './Cursor.module.scss'
 import { motion } from 'framer-motion'
 import useMouse from '@react-hook/mouse-position'
+import { findDOMNode } from 'react-dom'
 
 const Cursor: FC = () => {
-  const [prevX, setPrevX] = useState(0)
-  const [prevY, setPrevY] = useState(0)
+  const [prevX, setPrevX] = useState<number>(0)
+  const [prevY, setPrevY] = useState<number>(0)
   const [cursorVariant, setCursorVariant] = useState('hidden')
-  const ref = useRef(null)
 
-  const mouse = useMouse(ref, {
+  const bodyRef = findDOMNode(document.body)
+
+  const mouse = useMouse(bodyRef, {
     enterDelay: 100,
     leaveDelay: 100,
   })
@@ -49,6 +51,9 @@ const Cursor: FC = () => {
     setCursorVariant('hidden')
   }
 
+  bodyRef?.addEventListener('mouseleave', handleLeaveScreen)
+  bodyRef?.addEventListener('mouseenter', () => setCursorVariant('default'))
+
   const spring = {
     type: 'spring',
     stiffness: 500,
@@ -56,19 +61,13 @@ const Cursor: FC = () => {
   }
 
   return (
-    <div
-      className={styles.container}
-      ref={ref}
-      onMouseLeave={handleLeaveScreen}
-      onMouseEnter={() => setCursorVariant('default')}
-    >
-      <motion.div
-        className={styles.cursor}
-        variants={variants}
-        animate={cursorVariant}
-        transition={spring}
-      ></motion.div>
-    </div>
+    <motion.div
+      className={styles.cursor}
+      variants={variants}
+      animate={cursorVariant}
+      transition={spring}
+      whileFocus={{ scale: 1.2 }}
+    ></motion.div>
   )
 }
 

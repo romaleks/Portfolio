@@ -1,13 +1,14 @@
 @import './styles/variables';
 
 .content {
-  @apply h-screen w-5/6 mx-auto flex gap-8 items-center;
+  @apply w-5/6 h-full mx-auto flex gap-8 items-center;
 
   .about {
     @apply text-7xl font-medium flex-1;
 
     .title {
       @apply tracking-wide mb-8;
+
       > div {
         @include text-gradient(#fff, #565656, 45deg);
 
