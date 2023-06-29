@@ -43,6 +43,11 @@ const Cursor: FC = () => {
       scale: 0,
       transition: 'hidden',
     },
+    scale: {
+      x: mouseXPosition,
+      y: mouseYPosition,
+      scale: 1.3,
+    },
   }
 
   const handleLeaveScreen = () => {
@@ -50,6 +55,9 @@ const Cursor: FC = () => {
     setPrevY(mouse.clientY)
     setCursorVariant('hidden')
   }
+
+  bodyRef?.addEventListener('mousedown', () => setCursorVariant('scale'))
+  bodyRef?.addEventListener('mouseup', () => setCursorVariant('default'))
 
   bodyRef?.addEventListener('mouseleave', handleLeaveScreen)
   bodyRef?.addEventListener('mouseenter', () => setCursorVariant('default'))
@@ -66,7 +74,6 @@ const Cursor: FC = () => {
       variants={variants}
       animate={cursorVariant}
       transition={spring}
-      whileFocus={{ scale: 1.2 }}
     ></motion.div>
   )
 }
