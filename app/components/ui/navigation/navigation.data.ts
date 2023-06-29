@@ -13,8 +13,4 @@ export const navItems: INavItem[] = [
     title: 'Stack',
     link: '#stack',
   },
-  {
-    title: 'Contacts',
-    link: '#contacts',
-  },
 ]

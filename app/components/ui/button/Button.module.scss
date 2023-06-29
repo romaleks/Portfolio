@@ -1,0 +1,17 @@
+.button {
+  @apply px-4 py-2 uppercase text-xl font-medium border-2 border-white rounded-full relative overflow-hidden duration-500;
+
+  &:hover {
+    @apply text-black;
+
+    &::after {
+      @apply w-full;
+    }
+  }
+
+  &::after {
+    content: '';
+    @apply absolute top-0 left-0 w-0 h-full bg-white duration-500 -z-10;
+    transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+  }
+}
