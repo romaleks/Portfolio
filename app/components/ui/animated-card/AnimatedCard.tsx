@@ -17,20 +17,48 @@ const AnimatedCard: FC<IAnimatedCard> = ({ title, image, isLarge }) => {
 
   const { rotateX, rotateY } = useAnimatedCard(ref)
 
+  const cardMotion = {
+    hover: {
+      scale: 1.03,
+    },
+  }
+
+  const imageMotion = {
+    initial: { borderRadius: '1rem' },
+    hover: {
+      scale: 1.1,
+      borderRadius: '2rem',
+    },
+  }
+
+  const transition = { cubicBezier: [0.03, 0.98, 0.52, 0.99], duration: 0.4 }
+
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial="initial"
+      whileHover="hover"
+    >
       <motion.div
         className={styles.rotationWrapper}
         style={{ rotateX, rotateY }}
+        variants={cardMotion}
+        transition={transition}
       >
         <div className={styles.cardWrapper} ref={ref}>
-          <Card title={title} image={image} isLarge={isLarge} />
+          <Card
+            title={title}
+            image={image}
+            isLarge={isLarge}
+            variants={imageMotion}
+            transition={transition}
+          />
         </div>
         <div className={styles.shadow}>
           <Image src={image} alt="shadow" width={500} height={100} />
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   )
 }
 

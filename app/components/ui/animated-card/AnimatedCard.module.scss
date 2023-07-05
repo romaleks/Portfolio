@@ -14,8 +14,8 @@
 }
 
 .card {
-  @apply rounded-3xl p-4 flex flex-col justify-between gap-4 text-center text-gray;
-  width: 250px;
+  @apply rounded-3xl p-4 flex flex-col justify-between gap-6 text-center text-gray overflow-hidden;
+  width: 240px;
   height: 320px;
   border: 2px solid rgba(200 200 200 / 0.2);
 
