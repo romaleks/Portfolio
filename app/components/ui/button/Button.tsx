@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { FC } from 'react'
+
 import styles from './Button.module.scss'
+
 interface IButton {
   title: string
   link: string

@@ -1,9 +1,11 @@
 'use client'
-import { FC, useState } from 'react'
-import styles from './Cursor.module.scss'
-import { motion } from 'framer-motion'
+
 import useMouse from '@react-hook/mouse-position'
+import { motion } from 'framer-motion'
+import { FC, useState } from 'react'
 import { findDOMNode } from 'react-dom'
+
+import styles from './Cursor.module.scss'
 
 const Cursor: FC = () => {
   const [prevX, setPrevX] = useState<number>(0)

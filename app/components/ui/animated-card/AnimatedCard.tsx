@@ -1,10 +1,12 @@
 'use client'
+
+import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { FC, useRef } from 'react'
+
 import styles from './AnimatedCard.module.scss'
 import Card from './Card'
 import { useAnimatedCard } from './useAnimatedCard'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
 
 export interface IAnimatedCard {
   title: string

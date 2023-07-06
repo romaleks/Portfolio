@@ -1,8 +1,10 @@
 import { FC } from 'react'
-import { navItems } from './navigation.data'
+
+import Button from '../button/Button'
+
 import NavItem from './NavItem'
 import styles from './Navigation.module.scss'
-import Button from '../button/Button'
+import { navItems } from './navigation.data'
 
 const Navigation: FC = () => {
   return (

@@ -1,8 +1,9 @@
-import { FC } from 'react'
-import styles from './AnimatedCard.module.scss'
-import Image from 'next/image'
-import { IAnimatedCard } from './AnimatedCard'
 import cn from 'clsx'
+import Image from 'next/image'
+import { FC } from 'react'
+
+import { IAnimatedCard } from './AnimatedCard'
+import styles from './AnimatedCard.module.scss'
 
 const Card: FC<IAnimatedCard> = ({ image, title, isLarge }) => {
   return (
