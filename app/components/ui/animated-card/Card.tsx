@@ -3,22 +3,11 @@ import styles from './AnimatedCard.module.scss'
 import Image from 'next/image'
 import { IAnimatedCard } from './AnimatedCard'
 import cn from 'clsx'
-import { motion } from 'framer-motion'
 
-const Card: FC<IAnimatedCard> = ({
-  image,
-  title,
-  isLarge,
-  variants,
-  transition,
-}) => {
+const Card: FC<IAnimatedCard> = ({ image, title, isLarge }) => {
   return (
     <div className={cn(styles.card, { [styles.large]: isLarge })}>
-      <motion.div
-        className={styles.image}
-        variants={variants}
-        transition={transition}
-      >
+      <div className={styles.image}>
         <Image
           src={image}
           alt={title}
@@ -26,7 +15,7 @@ const Card: FC<IAnimatedCard> = ({
           style={{ objectFit: 'cover' }}
           priority
         />
-      </motion.div>
+      </div>
       <div className={styles.title}>{title}</div>
     </div>
   )

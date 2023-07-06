@@ -1,6 +1,20 @@
 .container {
   perspective: 1000px;
   z-index: 50;
+  transition: all 1200ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s;
+
+  &:hover {
+    transform: scale(1.03);
+
+    .image {
+      @apply rounded-3xl;
+      transform: scale(1.18);
+    }
+
+    .large .image {
+      transform: scale(1.08);
+    }
+  }
 
   .rotationWrapper {
     @apply w-full h-full flex justify-center items-center;
@@ -14,13 +28,14 @@
 }
 
 .card {
-  @apply rounded-3xl p-4 flex flex-col justify-between gap-6 text-center text-gray overflow-hidden;
+  @apply rounded-3xl p-4 flex flex-col justify-between gap-7 text-center text-gray overflow-hidden;
   width: 240px;
   height: 320px;
   border: 2px solid rgba(200 200 200 / 0.2);
 
   .image {
     @apply rounded-lg overflow-hidden w-full h-full relative;
+    transition: all 1200ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s;
   }
 
   .title {
