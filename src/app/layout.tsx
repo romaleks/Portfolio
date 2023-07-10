@@ -1,7 +1,8 @@
 import { Raleway } from 'next/font/google'
 
+import Navigation from '@/components/layout/navigation/Navigation'
+
 import Cursor from '@/ui/cursor/Cursor'
-import Navigation from '@/ui/navigation/Navigation'
 
 import '../styles/globals.scss'
 

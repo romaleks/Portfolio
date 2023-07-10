@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
-import Button from '../button/Button'
-import RevealElement from '../reveal-element/RevealElement'
+import Button from '../../ui/button/Button'
+import RevealElement from '../../ui/reveal-element/RevealElement'
 
 import NavItem from './NavItem'
 import styles from './Navigation.module.scss'
