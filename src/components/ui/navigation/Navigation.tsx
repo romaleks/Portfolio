@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
 import Button from '../button/Button'
+import RevealElement from '../reveal-element/RevealElement'
 
 import NavItem from './NavItem'
 import styles from './Navigation.module.scss'
@@ -13,7 +14,9 @@ const Navigation: FC = () => {
         <div className={styles.logo}></div>
 
         {navItems.map(item => (
-          <NavItem title={item.title} link={item.link} />
+          <RevealElement>
+            <NavItem title={item.title} link={item.link} />
+          </RevealElement>
         ))}
 
         <Button title="Let's chat!" link="#contacts" />
