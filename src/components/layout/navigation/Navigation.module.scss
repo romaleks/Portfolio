@@ -1,5 +1,5 @@
 .navigation {
-  @apply p-4 border-b;
+  @apply fixed top-0 left-0 right-0 p-4 border-b border-gray bg-black z-50;
 
   .items {
     @apply w-5/6 mx-auto flex items-center gap-8;

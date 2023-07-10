@@ -2,4 +2,5 @@
   @apply fixed top-0 left-0 bg-white w-8 h-8 rounded-full;
   mix-blend-mode: difference;
   pointer-events: none;
+  z-index: 100;
 }
