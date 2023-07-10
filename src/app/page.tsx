@@ -1,6 +1,7 @@
-import AnimatedCard from './components/ui/animated-card/AnimatedCard'
-import Button from './components/ui/button/Button'
-import RevealElement from './components/ui/reveal-element/RevealElement'
+import AnimatedCard from '@/components/ui/animated-card/AnimatedCard'
+import Button from '@/components/ui/button/Button'
+import RevealElement from '@/components/ui/reveal-element/RevealElement'
+
 import styles from './styles.module.scss'
 
 export default function Home() {

@@ -1,8 +1,9 @@
 import { Raleway } from 'next/font/google'
 
-import Cursor from './components/ui/cursor/Cursor'
-import Navigation from './components/ui/navigation/Navigation'
-import './styles/globals.scss'
+import Cursor from '@/ui/cursor/Cursor'
+import Navigation from '@/ui/navigation/Navigation'
+
+import '../styles/globals.scss'
 
 const raleway = Raleway({
   subsets: ['latin'],
