@@ -35,7 +35,7 @@ const Navigation: FC = () => {
         <div className={styles.logo}></div>
 
         {navItems.map(item => (
-          <RevealElement>
+          <RevealElement key={item.title}>
             <NavItem title={item.title} link={item.link} />
           </RevealElement>
         ))}

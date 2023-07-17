@@ -12,7 +12,7 @@ export const useBoundedScroll = (bounds: number) => {
     Math.min(Math.max(number, min), max)
 
   useEffect(() => {
-    return scrollY.onChange(current => {
+    return scrollY.on('change', current => {
       let previous = scrollY.getPrevious()
       let diff = current - previous
       let newScrollYBounded = scrollYBounded.get() + diff
