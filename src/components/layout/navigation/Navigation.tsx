@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useTransform } from 'framer-motion'
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 
 import Button from '@/components/ui/button/Button'
 import RevealElement from '@/components/ui/reveal-element/RevealElement'
@@ -14,7 +14,12 @@ import { useBoundedScroll } from './useBoundedScroll'
 const Navigation: FC = () => {
   let { scrollYBoundedProgress } = useBoundedScroll(200)
 
-  const height = useTransform(scrollYBoundedProgress, [0, 1], [80, 50])
+  // Nav bar changing
+  const padding = useTransform(
+    scrollYBoundedProgress,
+    [0, 1],
+    ['1rem', '0.3rem']
+  )
   const backgroundColor = useTransform(
     scrollYBoundedProgress,
     [0, 1],
@@ -26,21 +31,31 @@ const Navigation: FC = () => {
     ['blur(0px)', 'blur(10px)']
   )
 
+  // Items changing
+  const scale = useTransform(scrollYBoundedProgress, [0, 1], [1, 0.8])
+  const opacity = useTransform(scrollYBoundedProgress, [0, 1], [1, 0])
+  const y = useTransform(scrollYBoundedProgress, [0, 1], [0, -50])
+  const x = useTransform(scrollYBoundedProgress, [0, 1], [0, -8])
+
   return (
     <motion.nav
       className={styles.navigation}
-      style={{ height, backgroundColor, backdropFilter }}
+      style={{ padding, backgroundColor, backdropFilter }}
     >
       <ul className={styles.items}>
-        <div className={styles.logo}></div>
+        <motion.div className={styles.logo} style={{ scale }}></motion.div>
 
         {navItems.map(item => (
           <RevealElement key={item.title}>
-            <NavItem title={item.title} link={item.link} />
+            <motion.div style={{ opacity, x, y }}>
+              <NavItem title={item.title} link={item.link} />
+            </motion.div>
           </RevealElement>
         ))}
 
-        <Button title="Let's chat!" link="#contacts" />
+        <motion.div className={styles.button} style={{ scale }}>
+          <Button title="Let's chat!" link="#contacts" />
+        </motion.div>
       </ul>
     </motion.nav>
   )
