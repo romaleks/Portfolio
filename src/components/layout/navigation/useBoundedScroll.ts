@@ -1,19 +1,25 @@
-import { useScroll } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useMotionValue, useScroll, useTransform } from 'framer-motion'
+import { useEffect } from 'react'
 
-export const useBoudedScroll = () => {
+export const useBoundedScroll = (bounds: number) => {
   let { scrollY } = useScroll()
+  let scrollYBounded = useMotionValue(0)
+  let scrollYBoundedProgress = useTransform(scrollYBounded, [0, bounds], [0, 1])
 
-  const [status, setStatus] = useState<'hidden' | 'visible'>('visible')
+  setInterval(() => {})
+
+  let clamp = (number: number, min: number, max: number) =>
+    Math.min(Math.max(number, min), max)
 
   useEffect(() => {
     return scrollY.onChange(current => {
       let previous = scrollY.getPrevious()
+      let diff = current - previous
+      let newScrollYBounded = scrollYBounded.get() + diff
 
-      if (current < previous) setStatus('visible')
-      else if (current > 100 && current > previous) setStatus('hidden')
+      scrollYBounded.set(clamp(newScrollYBounded, 0, bounds))
     })
-  }, [scrollY])
+  }, [bounds, scrollY, scrollYBounded])
 
-  return { status }
+  return { scrollYBounded, scrollYBoundedProgress }
 }

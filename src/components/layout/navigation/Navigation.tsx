@@ -1,35 +1,35 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { FC } from 'react'
+import { motion, useTransform } from 'framer-motion'
+import { FC, useEffect } from 'react'
 
-import Button from '../../ui/button/Button'
-import RevealElement from '../../ui/reveal-element/RevealElement'
+import Button from '@/components/ui/button/Button'
+import RevealElement from '@/components/ui/reveal-element/RevealElement'
 
 import NavItem from './NavItem'
 import styles from './Navigation.module.scss'
 import { navItems } from './navigation.data'
-import { useBoudedScroll } from './useBoundedScroll'
+import { useBoundedScroll } from './useBoundedScroll'
 
 const Navigation: FC = () => {
-  let { status } = useBoudedScroll()
+  let { scrollYBoundedProgress } = useBoundedScroll(200)
 
-  const variants = {
-    visible: {
-      backgroundColor: '#000',
-    },
-    hidden: {
-      height: 60,
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
-      backdropFilter: 'blur(10px)',
-    },
-  }
+  const height = useTransform(scrollYBoundedProgress, [0, 1], [80, 50])
+  const backgroundColor = useTransform(
+    scrollYBoundedProgress,
+    [0, 1],
+    ['rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 0.5)']
+  )
+  const backdropFilter = useTransform(
+    scrollYBoundedProgress,
+    [0, 1],
+    ['blur(0px)', 'blur(10px)']
+  )
 
   return (
     <motion.nav
       className={styles.navigation}
-      variants={variants}
-      animate={status}
+      style={{ height, backgroundColor, backdropFilter }}
     >
       <ul className={styles.items}>
         <div className={styles.logo}></div>
